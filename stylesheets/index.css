@@ -1,5 +1,9 @@
+body{
+	cursor: url(../images/animworm.cur),default;
+}
 .method{
 	padding: 10px 20px;
+	display: inline-block;
 }
 .attention{
 	margin-top: 20px;
@@ -12,6 +16,7 @@
 }
 .attention a:hover{
 	text-decoration: underline;
+    cursor: url(../images/cd_crosshairs.cur),pointer;
 }
 .profile-img{
 	position: absolute;
@@ -20,4 +25,31 @@
 	transition: 500ms;
 	margin-top: -115px;
   	margin-left: 70px;
+  	cursor: url(../images/zapspot_bubblepop.cur),pointer;
+}
+.method-name{
+	color: #6666FF;
+	cursor: url(../images/zapspot_bubblepop.cur),pointer;
+}
+.method-name:hover{
+	text-decoration: underline;
+}
+.method-name-style{
+	margin-top: 6px;
+  	margin-right: 6px;
+  	height: 6px;
+  	width: 6px;
+  	border: 1px solid;
+  	float: left;
+}
+.rec-left{
+	float: left;
+  	width: 465px;
+  	background-color: #ededed;
+  	box-shadow: 0 0 5px #000000 inset;
+}
+.rec-right{
+	float: right;
+  	width: 465px;
+  	box-shadow: 0 0 5px #000000 inset;
 }
