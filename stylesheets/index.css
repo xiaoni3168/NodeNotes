@@ -14,4 +14,10 @@
 	text-decoration: underline;
 }
 .profile-img{
+	position: absolute;
+	height: 70px;
+	border-radius: 35px;
+	transition: 500ms;
+	margin-top: -115px;
+  	margin-left: 70px;
 }
