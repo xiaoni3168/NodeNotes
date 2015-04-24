@@ -1,0 +1,17 @@
+.method{
+	padding: 10px 20px;
+}
+.attention{
+	margin-top: 20px;
+  	float: right;
+  	color: #000000;
+  	font-size: 12px;
+}
+.attention a{
+	color: #FF7700;
+}
+.attention a:hover{
+	text-decoration: underline;
+}
+.profile-img{
+}
