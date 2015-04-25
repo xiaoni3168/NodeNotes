@@ -30,11 +30,11 @@ body{
   	margin-left: 70px;
   	cursor: url(../images/zapspot_bubblepop.cur),pointer;
 }
-.method-name{
+.method-name a{
 	color: #66CC00;
 	cursor: url(../images/zapspot_bubblepop.cur),pointer;
 }
-.method-name:hover{
+.method-name a:hover{
 	text-decoration: underline;
 }
 .method-name-style{
@@ -71,7 +71,7 @@ body{
   	border-left: 2px solid #adadad;
 }
 .code-area div{
-	padding-left: 30px;
+	padding-left: 20px;
 }
 .code-line{
 	background-color: #292929;
@@ -82,8 +82,17 @@ body{
   	color: #666;
   	border-right: 1px solid #444;
   	padding-right: 10px;
+  	width: 17px;
+  	text-align: right;
 }
 .code-area b.code-str{
 	font-weight: 100;
   	color: #A5C261;
+}
+.code-area b.code-keep-word{
+	color: #C26230;
+}
+.code-area b.code-func{
+	color: #D0D0FF;
+  	font-weight: 100;
 }

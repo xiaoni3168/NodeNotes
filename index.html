@@ -36,19 +36,19 @@
         <div class="method">
           <div class="mar-b5">
             <span class="method-name-style"></span>
-            <span class="method-name">http.METHODS</span>
+            <span class="method-name"><a href="#httpMethods">http.METHODS</a></span>
           </div>
           <div class="mar-b5">
             <span class="method-name-style"></span>
-            <span class="method-name">http.STATUS-CODE</span>
+            <span class="method-name"><a href="#httpStatusCodes">http.STATUS-CODES</a></span>
           </div>
           <div class="mar-b5">
             <span class="method-name-style"></span>
-            <span class="method-name">http.createServer([requestListener])</span>
+            <span class="method-name"><a href="#httpCreateServer">http.createServer([requestListener])</a></span>
           </div>
           <div class="mar-b5">
             <span class="method-name-style"></span>
-            <span class="method-name">http.createClient([port][,host])</span>
+            <span class="method-name"><a href="#httpCreateClient">http.createClient([port][,host])</a></span>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@
           To use the HTTP server and client one must require('http').<br><br>
 The HTTP interfaces in Node are designed to support many features of the protocol which have been traditionally difficult to use. In particular,large,possibly chunk-encoded,messages.The interface is careful to nerver buffer entire requests or responses--the user is able to stream data.<br><br>
 HTTP message headers are represented by an object like this:
-          <div id="codeArea" class="code-area">
+          <div class="code-area">
             <div>{ 'content-length': '123',</div>
             <div>'content-type': 'text/plain',</div>
             <div>'connection': 'keep-alive',</div>
@@ -72,6 +72,40 @@ In order to support the full spectrum of possible HTTP applications,Node's HTTP 
 Defined headers that allow multiple values are concatenated with a,character,except for the set-cookie and cookie headers which are represented as an arry of values.Headers such as content-length which can only have a single value are parsed accordingly,and only a single value is represented on the parsed object.<br><br>
 
 The raw headers as they were recevied are retained in the rawHeaders property,which is an array of [key, value, key2, value2, ...].For example,the previous message header object might have a rawHeaders list like the following:
+          <div class="code-area">
+            <div>[ 'ConTent-Length', '123456',</div>
+            <div>'content-LENGTH', '123',</div>
+            <div>'content-type', 'text/plain',</div>
+            <div>'CONNECTION', 'keep-alive',</div>
+            <div>'Host', 'mysite.com',</div>
+            <div>'accepT', '*/*' ]</div>
+          </div>
+          <h2 id="httpMethods">http.METHODS</h2>
+          <ul>
+            <li>Array</li>
+          </ul>
+          A list of the HTTP methods that are supported by the parser.
+          <h2 id="httpStatusCodes">http.STATUS_CODES</h2>
+          <ul>
+            <li>
+              Object
+            </li>
+          </ul>
+          A collection of all the standard HTTP response status codes, and the short description of each. For example,
+          <div class="code-area">
+            <div>http.STATUS_CODES[404] === 'Not Found'.</div>
+          </div>
+          <h2 id="httpCreateServer">http.createServer([requestListener])</h2>
+          Returns a new instance of http.Server<br><br>
+          The requestListener is a function which is automatically added to the 'request' event.
+          <h2 id="httpCreateClient">http.createClient([port][,host])</h2>
+          This function deprecated;please use http.request() instead.Constructs a new HTTP client.port and host refer to the server to be connected to.
+          <h2 id="httpServer">Class: http.Server</h2>
+          This is an EventEmitter with the following events:
+          <h3>Event: 'request'</h3>
+          <div class="code-area">
+            <div>function (request, response) { }</div>
+          </div>
         </div>
       </div>
       
