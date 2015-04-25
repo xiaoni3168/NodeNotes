@@ -1,6 +1,9 @@
 body{
 	cursor: url(../images/animworm.cur),default;
 }
+.mar-b5{
+	margin-bottom: 5px;
+}
 .method{
 	padding: 10px 20px;
 	display: inline-block;
@@ -28,7 +31,7 @@ body{
   	cursor: url(../images/zapspot_bubblepop.cur),pointer;
 }
 .method-name{
-	color: #6666FF;
+	color: #66CC00;
 	cursor: url(../images/zapspot_bubblepop.cur),pointer;
 }
 .method-name:hover{
@@ -47,9 +50,40 @@ body{
   	width: 465px;
   	background-color: #ededed;
   	box-shadow: 0 0 5px #000000 inset;
+  	border-radius: 4px;
+  	max-height: 300px;
+  	overflow: scroll;
 }
 .rec-right{
 	float: right;
   	width: 465px;
   	box-shadow: 0 0 5px #000000 inset;
+  	border-radius: 4px;
+  	max-height: 300px;
+  	overflow: scroll;
+}
+.translate-area{
+	margin: 15px;
+}
+.code-area{
+	color: #FFFFFF;
+	background-color: #232323;
+  	border-left: 2px solid #adadad;
+}
+.code-area div{
+	padding-left: 30px;
+}
+.code-line{
+	background-color: #292929;
+}
+.code-line-number{
+	float: left;
+  	margin-right: 10px;
+  	color: #666;
+  	border-right: 1px solid #444;
+  	padding-right: 10px;
+}
+.code-area b.code-str{
+	font-weight: 100;
+  	color: #A5C261;
 }
