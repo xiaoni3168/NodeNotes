@@ -12,8 +12,11 @@ for(var i=0;i<codeLen;i++){
 	if(i%2 != 0) {
 		codeDiv.setAttribute('class','code-line');
 	}
-	var arr = codeDiv.innerHTML;
+	var code = codeDiv.innerHTML;
 	var reg = /'[\w(+-/*)]+'/g;
-	arr = arr.replace(reg,'<b class="code-str">'+reg.exec(arr)+'</b>');
-	codeDiv.innerHTML = arr;
+	var arr = code.match(reg);
+	for(key in arr) {
+		code = code.replace(arr[key], '<b class="code-str">'+arr[key]+'</b>');
+		codeDiv.innerHTML = code;
+	}
 }
