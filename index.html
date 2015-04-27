@@ -58,6 +58,18 @@
             <span class="method-name-style"></span>
             <span class="method-name"><a href="#eventRequest">Event: 'request'</a></span>
           </div>
+          <div class="mar-b5 mar-l20">
+            <span class="method-name-style"></span>
+            <span class="method-name"><a href="#eventConnection">Event: 'connection'</a></span>
+          </div>
+          <div class="mar-b5 mar-l20">
+            <span class="method-name-style"></span>
+            <span class="method-name"><a href="#eventClose">Event: 'close'</a></span>
+          </div>
+          <div class="mar-b5 mar-l20">
+            <span class="method-name-style"></span>
+            <span class="method-name"><a href="#eventCheckContinue">Event: 'checkContinue'</a></span>
+          </div>
         </div>
       </div>
       <div class="rec-right">
@@ -113,6 +125,34 @@ The raw headers as they were recevied are retained in the rawHeaders property,wh
           <h3 id="eventRequest">Event: 'request'</h3>
           <div class="code-area">
             <div>function (request, response) { }</div>
+          </div>
+          <br>
+          Emitted each time there is a request.Note that there may be multiple requests per connection(in the case of keep-alive connection).request is an instance of http.IncomingMessage and response is an instance of http.ServerResponse.
+          <h3 id="eventConnection">Event: 'connection'</h3>
+          <div class="code-area">
+            <div>function (socket) { }</div>
+          </div>
+          <br>
+          When a new TCP stream is established.socket is an object of type net.Socket.Usually users will not want to access this event.In particular,the socket will not emit readable events because of how the protocol parser attaches to the socket.The socket can also be accessed at request.connection.
+          <h3 id="eventClose">Event: 'close'</h3>
+          <div class="code-area">
+            <div>function () { }</div>
+          </div>
+          <br>
+          Emitted when the server closes.
+          <h3 id="eventCheckContinue">Event: 'checkContinue'</h3>
+          <div class="code-area">
+            <div>function (request, response) { }</div>
+          </div>
+          <br>
+          Emitted each time a request with an http Expect: 100-continue is received.If this event isn't listened for,the  server will automatically respond with a 100 Continue as appropriate.
+          <br><br>
+          Handling this event involes calling response.writeContinue() if the client should continue to send the request body, or generating an appropriate HTTP response(e.g.,400 Bad Request) if the client should not continue to send the request body.
+          <br><br>
+          Note that when this event is emitted and handled,the request event will not be emitted.
+          <h3>Event: 'connect'</h3>
+          <div class="code-area">
+            <div>function (request, socket, head) { }</div>
           </div>
         </div>
       </div>
