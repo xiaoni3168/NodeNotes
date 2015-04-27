@@ -1,5 +1,5 @@
 console.log('This would be the main JS file.');
-var keepWord = ['function'];
+var keepWord = ['function','var','for',' in '];
 var Reg = {
 	'codeStr': /\'[\w(-|+|/|*|\s)]+\'/g,
 	'codeFunction': /function\s\(\w+(|,|\s)+\w+\)/g

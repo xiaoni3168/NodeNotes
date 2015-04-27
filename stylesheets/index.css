@@ -4,6 +4,9 @@ body{
 .mar-b5{
 	margin-bottom: 5px;
 }
+.mar-l20{
+	margin-left: 20px;
+}
 .method{
 	padding: 10px 20px;
 	display: inline-block;
@@ -91,6 +94,7 @@ body{
 }
 .code-area b.code-keep-word{
 	color: #C26230;
+	font-weight: normal;
 }
 .code-area b.code-func{
 	color: #D0D0FF;
