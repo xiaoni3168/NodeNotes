@@ -100,3 +100,10 @@ body{
 	color: #D0D0FF;
   	font-weight: 100;
 }
+.translate-area span.code{
+	color: #996633;
+	font-weight: bold;
+}
+.translate-area a:hover{
+	cursor: url(../images/zapspot_bubblepop.cur),pointer;
+}

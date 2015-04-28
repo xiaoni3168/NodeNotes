@@ -75,7 +75,7 @@
       <div class="rec-right">
         <div class="translate-area">
           <h1 id="HTTP">HTTP</h1>
-          To use the HTTP server and client one must require('http').<br><br>
+          To use the HTTP server and client one must <span class="code">require('http')</span>.<br><br>
 The HTTP interfaces in Node are designed to support many features of the protocol which have been traditionally difficult to use. In particular,large,possibly chunk-encoded,messages.The interface is careful to nerver buffer entire requests or responses--the user is able to stream data.<br><br>
 HTTP message headers are represented by an object like this:
           <div class="code-area">
@@ -89,9 +89,9 @@ HTTP message headers are represented by an object like this:
 
 In order to support the full spectrum of possible HTTP applications,Node's HTTP API is very low-level.It deals with stream handling and message parsing only.It parses a message into headers and body but it dose not parse the actual headers or the body.<br><br>
 
-Defined headers that allow multiple values are concatenated with a,character,except for the set-cookie and cookie headers which are represented as an arry of values.Headers such as content-length which can only have a single value are parsed accordingly,and only a single value is represented on the parsed object.<br><br>
+Defined headers that allow multiple values are concatenated with a <span class="code">,</span> character,except for the <span class="code">set-cookie</span> and <span class="code">cookie</span> headers which are represented as an arry of values.Headers such as <span class="code">content-length</span> which can only have a single value are parsed accordingly,and only a single value is represented on the parsed object.<br><br>
 
-The raw headers as they were recevied are retained in the rawHeaders property,which is an array of [key, value, key2, value2, ...].For example,the previous message header object might have a rawHeaders list like the following:
+The raw headers as they were recevied are retained in the <span class="code">rawHeaders</span> property,which is an array of <span class="code">[key, value, key2, value2, ...]</span>.For example,the previous message header object might have a <span class="code">rawHeaders</span> list like the following:
           <div class="code-area">
             <div>[ 'ConTent-Length', '123456',</div>
             <div>'content-LENGTH', '123',</div>
@@ -117,23 +117,23 @@ The raw headers as they were recevied are retained in the rawHeaders property,wh
           </div>
           <h2 id="httpCreateServer">http.createServer([requestListener])</h2>
           Returns a new instance of http.Server<br><br>
-          The requestListener is a function which is automatically added to the 'request' event.
+          The <span class="code">requestListener</span> is a function which is automatically added to the <span class="code">'request'</span> event.
           <h2 id="httpCreateClient">http.createClient([port][,host])</h2>
-          This function deprecated;please use http.request() instead.Constructs a new HTTP client.port and host refer to the server to be connected to.
+          This function <b>deprecated</b>;please use <a href="">http.request()</a> instead.Constructs a new HTTP client.<span class="code">port</span> and <span class="code">host</span> refer to the server to be connected to.
           <h2 id="httpServer">Class: http.Server</h2>
-          This is an EventEmitter with the following events:
+          This is an <a>EventEmitter</a> with the following events:
           <h3 id="eventRequest">Event: 'request'</h3>
           <div class="code-area">
             <div>function (request, response) { }</div>
           </div>
           <br>
-          Emitted each time there is a request.Note that there may be multiple requests per connection(in the case of keep-alive connection).request is an instance of http.IncomingMessage and response is an instance of http.ServerResponse.
+          Emitted each time there is a request.Note that there may be multiple requests per connection(in the case of keep-alive connection).<span class="code">request</span> is an instance of <a>http.IncomingMessage</a> and <span class="code">response</span> is an instance of <a>http.ServerResponse</a>.
           <h3 id="eventConnection">Event: 'connection'</h3>
           <div class="code-area">
             <div>function (socket) { }</div>
           </div>
           <br>
-          When a new TCP stream is established.socket is an object of type net.Socket.Usually users will not want to access this event.In particular,the socket will not emit readable events because of how the protocol parser attaches to the socket.The socket can also be accessed at request.connection.
+          When a new TCP stream is established.<span class="code">socket</span> is an object of type <span class="code">net.Socket</span>.Usually users will not want to access this event.In particular,the socket will not emit <span class="code">readable</span> events because of how the protocol parser attaches to the <span class="code">socket</span>.The socket can also be accessed at <span class="code">request.connection</span>.
           <h3 id="eventClose">Event: 'close'</h3>
           <div class="code-area">
             <div>function () { }</div>
@@ -147,9 +147,9 @@ The raw headers as they were recevied are retained in the rawHeaders property,wh
           <br>
           Emitted each time a request with an http Expect: 100-continue is received.If this event isn't listened for,the  server will automatically respond with a 100 Continue as appropriate.
           <br><br>
-          Handling this event involes calling response.writeContinue() if the client should continue to send the request body, or generating an appropriate HTTP response(e.g.,400 Bad Request) if the client should not continue to send the request body.
+          Handling this event involes calling <a>response.writeContinue()</a> if the client should continue to send the request body, or generating an appropriate HTTP response(e.g.,400 Bad Request) if the client should not continue to send the request body.
           <br><br>
-          Note that when this event is emitted and handled,the request event will not be emitted.
+          Note that when this event is emitted and handled,the <span class="code">request</span> event will not be emitted.
           <h3>Event: 'connect'</h3>
           <div class="code-area">
             <div>function (request, socket, head) { }</div>
@@ -215,5 +215,6 @@ $ git checkout gh-pages
   <!-- <audio src="http://d.pr/a/1aIOC/GottaHaveYou.mp3" loop="loop" autoplay="autoplay"></audio> -->
   <script type="text/javascript" src="javascripts/jquery.min.js"></script>
   <script type="text/javascript" src="javascripts/main.js"></script>
+  <script type="text/javascript" src="javascripts/file.js"></script>
   </body>
 </html>
